@@ -102,23 +102,32 @@ footer { background-color: #333; color: var(--white-pure); padding: 40px 0 20px 
         width: 100%; 
         height: calc(100vh - 70px); 
         background: white; 
-        display: flex; /* <-- Importante: Asegura que sea flexbox siempre */
+        display: flex; 
         flex-direction: column; 
         padding: 40px; 
         transition: left 0.3s ease; 
-        z-index: 1000; /* <-- Añadido para que esté por encima de todo y permita clics */
+        z-index: 99999; /* Asegura que esté por encima de todo */
+        pointer-events: auto; /* Permite clics */
     }
     
     .nav-links.active { 
         left: 0; 
     }
-    
+
+    /* Fuerza a que cada enlace ocupe toda la fila y sea clickeable */
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 15px 0;
+        pointer-events: auto; /* Permite clics en los textos */
+    }
+
     .hamburger { 
         display: block; 
-        z-index: 1001; /* <-- Asegura que el botón hamburguesa también sea clickeable */
-    }
-    
-    .hero-grid, .about-grid, .delivery-grid { 
-        grid-template-columns: 1fr; 
+        z-index: 100000; /* Asegura que el botón nunca pierda interacción */
     }
 }
