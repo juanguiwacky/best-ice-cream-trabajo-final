@@ -167,17 +167,17 @@ if (hamburger && navLinks) {
     });
 }
 
+
 // Cerrar el menú automáticamente al tocar cualquier opción y permitir navegar
 if (navLinks) {
-    const navItems = document.querySelectorAll('#navLinks a');
+    const navItems = document.querySelectorAll('.nav-links a');
     navItems.forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
-            if (overlay) overlay.classList.remove('overlay') || overlay.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
         });
     });
 }
-
 // Envío a WhatsApp
 if (sendOrderBtn) {
     sendOrderBtn.addEventListener('click', () => {

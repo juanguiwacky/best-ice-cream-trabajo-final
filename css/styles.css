@@ -95,26 +95,34 @@ footer { background-color: #333; color: var(--white-pure); padding: 40px 0 20px 
 .overlay.active { display: block; }
 
 @media (max-width: 768px) {
+    /* El fondo oscuro queda detrás */
+    .overlay {
+        z-index: 999;
+    }
+    .overlay.active {
+        display: block;
+    }
+
+    /* El menú queda por encima del fondo y es 100% interactivo */
     .nav-links { 
         position: fixed; 
         top: 70px; 
         left: -100%; 
         width: 100%; 
         height: calc(100vh - 70px); 
-        background: white; 
+        background: #ffffff !important; /* Fondo blanco completamente sólido */
         display: flex; 
         flex-direction: column; 
         padding: 40px; 
         transition: left 0.3s ease; 
-        z-index: 99999; /* Asegura que esté por encima de todo */
-        pointer-events: auto; /* Permite clics */
+        z-index: 1000; /* Mayor que el overlay */
+        pointer-events: auto; 
     }
     
     .nav-links.active { 
         left: 0; 
     }
 
-    /* Fuerza a que cada enlace ocupe toda la fila y sea clickeable */
     .nav-links li {
         width: 100%;
         text-align: center;
@@ -123,11 +131,12 @@ footer { background-color: #333; color: var(--white-pure); padding: 40px 0 20px 
     .nav-links li a {
         display: block;
         padding: 15px 0;
-        pointer-events: auto; /* Permite clics en los textos */
+        pointer-events: auto; /* Permite hacer clic en el texto */
     }
 
     .hamburger { 
         display: block; 
-        z-index: 100000; /* Asegura que el botón nunca pierda interacción */
+        cursor: pointer;
+        z-index: 1001; 
     }
 }
