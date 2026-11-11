@@ -179,6 +179,7 @@ if (navLinks) {
     });
 }
 // Envío a WhatsApp optimizado para móviles
+// Envío a WhatsApp optimizado para móviles
 if (sendOrderBtn) {
     sendOrderBtn.addEventListener('click', () => {
         if (cart.length === 0) {
@@ -207,7 +208,3 @@ if (sendOrderBtn) {
         window.open(`https://wa.me/573146151822?text=${encodedMsg}`, '_blank');
     });
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    renderMenu();
-});
