@@ -21,7 +21,7 @@ const products = [
 
 let cart = [];
 
-// Selección DOM segura
+// Selección DOM basada en los IDs exactos de tu HTML
 const menuContainer = document.getElementById('menuContainer');
 const cartModal = document.getElementById('cartModal');
 const overlay = document.getElementById('overlay');
@@ -30,9 +30,9 @@ const closeCartBtn = document.getElementById('closeCart');
 const cartItemsContainer = document.getElementById('cartItems');
 const cartCountEl = document.getElementById('cartCount');
 const cartTotalEl = document.getElementById('cartTotal');
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-const navItems = document.querySelectorAll('.nav-links a');
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+const navItems = document.querySelectorAll('#navLinks a');
 const sendOrderBtn = document.getElementById('sendOrderBtn');
 
 // Renderizar Menú
@@ -122,11 +122,11 @@ function updateCart() {
     cart.forEach(item => {
         const el = document.createElement('div');
         el.className = 'cart-item';
-        const itemSubtotal = item.price * item.qty;
+        const subtotal = item.price * item.qty;
         el.innerHTML = `
             <div>
                 <div class="cart-item-title">${item.name}</div>
-                <div class="cart-item-price">$${itemSubtotal.toLocaleString('es-CO')} COP</div>
+                <div class="cart-item-price">$${subtotal.toLocaleString('es-CO')} COP</div>
             </div>
             <div class="cart-item-qty">
                 <button class="qty-btn" onclick="changeQty(${item.id}, -1)">-</button>
@@ -158,15 +158,16 @@ if (overlay) {
     });
 }
 
-// Menú Hamburguesa Móvil
+// Menú Hamburguesa Móvil (Escucha clics y toques en celulares)
 if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
         navLinks.classList.toggle('active');
         if (overlay) overlay.classList.toggle('active');
     });
 }
 
-// Cerrar el menú automáticamente al hacer clic en cualquier opción en celular
+// Cerrar el menú y permitir navegar al hacer clic en cualquier opción
 if (navLinks) {
     navItems.forEach(link => {
         link.addEventListener('click', () => {
