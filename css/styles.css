@@ -139,4 +139,35 @@ footer { background-color: #333; color: var(--white-pure); padding: 40px 0 20px 
         cursor: pointer;
         z-index: 1001; 
     }
+
+    /* ==========================================================
+       NUEVO: Ajuste para que la imagen y el texto del Hero 
+       se acomoden perfectamente en celulares
+       ========================================================== */
+    .hero-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .hero-image-container, 
+    .hero-img-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-img {
+        max-width: 85%; /* Ajusta el tamaño para que se vea estético */
+        height: auto;
+        object-fit: contain;
+        border-radius: 15px; /* Bordes redondeados modernos */
+    }
 }
