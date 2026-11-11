@@ -36,13 +36,20 @@ const navItems = document.querySelectorAll('#navLinks a');
 const sendOrderBtn = document.getElementById('sendOrderBtn');
 
 // Renderizar Menú
+// Renderizar Menú corregido para la pestaña Todos
 function renderMenu(category = 'todos') {
     if (!menuContainer) return;
     menuContainer.innerHTML = '';
 
-    const filteredProducts = category === 'todos' 
+    // Si la categoría es 'todos', muestra el arreglo completo de productos
+    const filteredProducts = (category === 'todos' || !category)
         ? products 
         : products.filter(p => p.category === category);
+
+    if (filteredProducts.length === 0) {
+        menuContainer.innerHTML = '<p class="text-center" style="color: var(--text-muted); grid-column: 1/-1; padding: 40px 0;">No hay productos disponibles en esta categoría.</p>';
+        return;
+    }
 
     filteredProducts.forEach(product => {
         const card = document.createElement('div');
@@ -208,3 +215,16 @@ if (sendOrderBtn) {
         window.open(`https://wa.me/573146151822?text=${encodedMsg}`, '_blank');
     });
 }
+
+// Cargar automáticamente todos los productos al abrir la página
+document.addEventListener('DOMContentLoaded', () => {
+    // Activa visualmente el botón de "Todos" si existe en la página actual
+    const btnTodos = document.querySelector('.tab-btn[data-category="todos"]');
+    if (btnTodos) {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btnTodos.classList.add('active');
+    }
+
+    // Renderiza el menú completo por defecto
+    renderMenu('todos');
+});
