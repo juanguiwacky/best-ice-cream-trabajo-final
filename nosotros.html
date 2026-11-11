@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | The Best Ice Cream Hacienda Niquía</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-img">
+                    <img src="img/logo.jpg" alt="Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <div style="display:none; width:100%; height:100%; align-items:center; justify-content:center; background:var(--blue-sky); color:white;"><i class="fa-solid fa-ice-cream"></i></div>
+                </div>
+                <div class="logo-text">The Best Cream<span>HACIENDA NIQUÍA</span></div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html" class="active">Nosotros</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="proyectos.html">Portafolio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="cart-icon-btn" id="openCart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                 <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <div class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <section style="padding: 140px 0 80px 0;" class="container">
+        <h2 class="section-title">Nuestra Historia y Trayectoria</h2>
+        <p class="section-subtitle">Fundada en 2022 por Víctor Ruiz y Daniela Montoya en Hacienda Niquía</p>
+        <div class="about-grid">
+            <div>
+                <p>Durante 4 años, The Best Ice Cream Hacienda Niquía se ha consolidado como el punto de encuentro favorito de familias y jóvenes residentes en el sector de Bello, Antioquia.</p>
+                <p>Nuestra misión es brindar una atención familiar y hogareña mediante helados y productos de repostería de excelente calidad.</p>
+                <div class="founders-card">
+                    <div class="founders-icon"><i class="fa-solid fa-heart"></i></div>
+                    <div>
+                        <h4>Víctor Ruiz & Daniela Montoya</h4>
+                        <p style="margin:0; font-size:0.85rem;">Fundadores</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="assets/images/local.jpg" alt="Local" style="border-radius: 20px; width:100%; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=600&q=80'">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-bottom text-center"><p>&copy; 2026 The Best Ice Cream Hacienda Niquía.</p></div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

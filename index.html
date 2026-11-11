@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Best Ice Cream Hacienda Niquía | Heladería Artesanal</title>
+    <meta name="description" content="Heladería artesanal y repostería en Hacienda Niquía, Bello. Domicilios ultra rápidos a tu unidad residencial.">
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="The Best Ice Cream Hacienda Niquía">
+    <meta property="og:description" content="Helados artesanales, repostería y el famoso Brownie Especial a domicilio en Hacienda Niquía.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thebesticecreamhaciendaniquia.com">
+    <meta property="og:image" content="assets/images/hero-brownie.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-img">
+                    <img src="img/logo.jpg" alt="Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <div style="display:none; width:100%; height:100%; align-items:center; justify-content:center; background:var(--blue-sky); color:white;"><i class="fa-solid fa-ice-cream"></i></div>
+                </div>
+                <div class="logo-text">The Best Cream<span>HACIENDA NIQUÍA</span></div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="proyectos.html">Portafolio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="cart-icon-btn" id="openCart"><i class="fa-solid fa-cart-shopping"></i><span class="cart-count" id="cartCount">0</span></div>
+                <div class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header"><h3><i class="fa-solid fa-bag-shopping"></i> Tu Pedido</h3><span class="close-cart" id="closeCart">&times;</span></div>
+        <div class="cart-body" id="cartItems"><p class="text-center" style="color: var(--text-muted); margin-top: 30px;">Tu carrito está vacío.</p></div>
+        <div class="cart-footer">
+            <div class="cart-total"><span>Total:</span><span id="cartTotal">$0 COP</span></div>
+            <button class="btn btn-whatsapp" style="width: 100%; justify-content: center;" id="sendOrderBtn"><i class="fa-brands fa-whatsapp"></i> Confirmar por WhatsApp</button>
+        </div>
+    </div>
+
+    <section class="hero" id="inicio">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="hero-badge"><i class="fa-solid fa-bicycle"></i> Entregas express a tu puerta</span>
+                <h1 class="hero-title">Helado artesanal y antojos directos a tu <span>conjunto</span></h1>
+                <p class="hero-desc">Disfruta en casa las mejores paletas, copas personalizadas, malteadas y nuestro famoso Brownie con Helado intacto.</p>
+                <div class="hero-buttons">
+                    <a href="productos.html" class="btn btn-pink"><i class="fa-solid fa-utensils"></i> Ver Menú y Productos</a>
+                    <a href="https://wa.me/573146151822?text=Hola!%20Quiero%20hacer%20un%20pedido." class="btn btn-whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp</a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <div class="hero-img-wrapper">
+                    <img src="img/IMAGENPRINCIPAL.jpeg" alt="Brownie con Helado" class="hero-img" onerror="this.src='https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=80'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-bottom text-center">
+            <p>&copy; 2026 The Best Ice Cream Hacienda Niquía. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <a href="https://wa.me/573146151822" class="whatsapp-float" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    <script src="js/main.js"></script>
+</body>
+</html>

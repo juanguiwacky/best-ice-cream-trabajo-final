@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos y Menú | The Best Ice Cream Hacienda Niquía</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+             <a href="index.html" class="logo">
+                <div class="logo-img">
+                    <img src="img/logo.jpg" alt="Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <div style="display:none; width:100%; height:100%; align-items:center; justify-content:center; background:var(--blue-sky); color:white;"><i class="fa-solid fa-ice-cream"></i></div>
+                </div>
+                <div class="logo-text">The Best Cream<span>HACIENDA NIQUÍA</span></div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="productos.html" class="active">Productos</a></li>
+                <li><a href="proyectos.html">Portafolio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="cart-icon-btn" id="openCart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <div class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Overlay y Modal del Carrito (Agregado para arreglar la apertura) -->
+    <div class="overlay" id="overlay"></div>
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-bag-shopping"></i> Tu Pedido</h3>
+            <span class="close-cart" id="closeCart">&times;</span>
+        </div>
+        <div class="cart-body" id="cartItems">
+            <p class="text-center" style="color: var(--text-muted); margin-top: 30px;">Tu carrito está vacío.<br>¡Elige algo delicioso del menú!</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0 COP</span>
+            </div>
+            <button class="btn btn-whatsapp" style="width: 100%; justify-content: center;" id="sendOrderBtn">
+                <i class="fa-brands fa-whatsapp"></i> Confirmar por WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <section class="menu-section" style="padding-top: 140px;">
+        <div class="container">
+            <h2 class="section-title">Catálogo de Productos</h2>
+            <p class="section-subtitle">Selecciona tus favoritos y haz tu pedido a WhatsApp</p>
+            <div class="menu-tabs">
+                <button class="tab-btn active" data-category="todos">Todos</button>
+                <button class="tab-btn" data-category="especiales">Repostería Estrella</button>
+                <button class="tab-btn" data-category="copas">Copas & Wafles</button>
+                <button class="tab-btn" data-category="malteadas">Malteadas</button>
+                <button class="tab-btn" data-category="helados">Paletas & Helado</button>
+            </div>
+            <div class="menu-grid" id="menuContainer"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-bottom text-center">
+            <p>&copy; 2026 The Best Ice Cream Hacienda Niquía.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

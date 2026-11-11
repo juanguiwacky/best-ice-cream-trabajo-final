@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios | The Best Ice Cream Hacienda Niquía</title>
+    <meta name="description" content="Servicios de heladería artesanal, repostería y domicilios express en Hacienda Niquía.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- ENCABEZADO Y LOGO DE NAVEGACIÓN -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-img">
+                    <img src="assets/logos/logo.png" alt="Logo The Best Ice Cream" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <div style="display:none; width:100%; height:100%; align-items:center; justify-content:center; background:var(--blue-sky); color:white;"><i class="fa-solid fa-ice-cream"></i></div>
+                </div>
+                <div class="logo-text">
+                    The Best Cream
+                    <span>HACIENDA NIQUÍA</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="servicios.html" class="active">Servicios</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="proyectos.html">Portafolio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <!-- ICONO DEL CARRITO -->
+            <div class="nav-actions">
+                <div class="cart-icon-btn" id="openCart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <div class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CAPA OSCURA Y MODAL DEL CARRITO DE COMPRAS -->
+    <div class="overlay" id="overlay"></div>
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-bag-shopping"></i> Tu Pedido</h3>
+            <span class="close-cart" id="closeCart">&times;</span>
+        </div>
+        <div class="cart-body" id="cartItems">
+            <p class="text-center" style="color: var(--text-muted); margin-top: 30px;">Tu carrito está vacío.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0 COP</span>
+            </div>
+            <button class="btn btn-whatsapp" style="width: 100%; justify-content: center;" id="sendOrderBtn">
+                <i class="fa-brands fa-whatsapp"></i> Confirmar por WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- SECCIÓN DE SERVICIOS -->
+    <section style="padding: 140px 0 80px 0;" class="container">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <p class="section-subtitle">Calidad en el punto físico y domicilios especializados a tu puerta</p>
+        
+        <div class="delivery-grid">
+            <div class="delivery-card">
+                <h3><i class="fa-solid fa-person-biking" style="color:var(--pink-dark);"></i> Domicilios Ultra Rápidos</h3>
+                <p>Envíos directos en bicicleta y moto para conjuntos residenciales aledaños en Hacienda Niquía, asegurando que tus brownies y helados lleguen intactos.</p>
+            </div>
+            <div class="delivery-card">
+                <h3><i class="fa-solid fa-store" style="color:var(--blue-dark);"></i> Atención en Local</h3>
+                <p>Ambiente familiar, limpio y acogedor abierto de Lunes a Domingo de 1:00 PM a 9:30 PM para disfrutar tus copas de helado y postres.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-bottom text-center">
+            <p>&copy; 2026 The Best Ice Cream Hacienda Niquía. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP Y ENLACE AL SCRIPT JAVASCRIPT -->
+    <a href="https://wa.me/573146151822" class="whatsapp-float" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    <script src="js/main.js"></script>
+</body>
+</html>
