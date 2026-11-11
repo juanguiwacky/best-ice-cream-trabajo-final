@@ -158,7 +158,7 @@ if (overlay) {
     });
 }
 
-// Menú Hamburguesa Móvil (Escucha clics y toques en celulares)
+// Menú Hamburguesa Móvil
 if (hamburger && navLinks) {
     hamburger.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -167,12 +167,13 @@ if (hamburger && navLinks) {
     });
 }
 
-// Cerrar el menú y permitir navegar al hacer clic en cualquier opción
+// Cerrar el menú automáticamente al tocar cualquier opción y permitir navegar
 if (navLinks) {
+    const navItems = document.querySelectorAll('#navLinks a');
     navItems.forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
-            if (overlay) overlay.classList.remove('active');
+            if (overlay) overlay.classList.remove('overlay') || overlay.classList.remove('active');
         });
     });
 }
