@@ -95,22 +95,30 @@ footer { background-color: #333; color: var(--white-pure); padding: 40px 0 20px 
 .overlay.active { display: block; }
 
 @media (max-width: 768px) {
-    .nav-links { position: fixed; top: 70px; left: -100%; width: 100%; height: calc(100vh - 70px); background: white; flex-direction: column; padding: 40px; transition: left 0.3s ease; }
-    .nav-links.active { left: 0; }
-    .hamburger { display: block; }
-    .hero-grid, .about-grid, .delivery-grid { grid-template-columns: 1fr; }
-}
-
-/* Estilo por defecto en móviles (oculto o colapsado) */
-@media (max-width: 768px) {
-    nav ul {
-        display: none; /* Oculta el menú por defecto */
-        flex-direction: column;
-        width: 100%;
+    .nav-links { 
+        position: fixed; 
+        top: 70px; 
+        left: -100%; 
+        width: 100%; 
+        height: calc(100vh - 70px); 
+        background: white; 
+        display: flex; /* <-- Importante: Asegura que sea flexbox siempre */
+        flex-direction: column; 
+        padding: 40px; 
+        transition: left 0.3s ease; 
+        z-index: 1000; /* <-- Añadido para que esté por encima de todo y permita clics */
     }
-
-    /* Cuando se active con JavaScript, se muestra */
-    nav ul.active {
-        display: flex; 
+    
+    .nav-links.active { 
+        left: 0; 
+    }
+    
+    .hamburger { 
+        display: block; 
+        z-index: 1001; /* <-- Asegura que el botón hamburguesa también sea clickeable */
+    }
+    
+    .hero-grid, .about-grid, .delivery-grid { 
+        grid-template-columns: 1fr; 
     }
 }
