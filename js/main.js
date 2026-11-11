@@ -178,7 +178,7 @@ if (navLinks) {
         });
     });
 }
-// Envío a WhatsApp
+// Envío a WhatsApp optimizado para móviles
 if (sendOrderBtn) {
     sendOrderBtn.addEventListener('click', () => {
         if (cart.length === 0) {
@@ -186,17 +186,24 @@ if (sendOrderBtn) {
             return;
         }
 
-        let msg = "¡Hola! Quisiera realizar el siguiente pedido a domicilio en Hacienda Niquía:\n\n";
+        let lines = [];
+        lines.push("¡Hola! Quisiera realizar el siguiente pedido a domicilio en Hacienda Niquía:");
+        lines.push("");
+
         cart.forEach(item => {
             const subtotal = item.price * item.qty;
-            msg += `• ${item.qty}x ${item.name} - $${subtotal.toLocaleString('es-CO')} COP\n`;
+            lines.push(`- ${item.qty} x ${item.name} ($${subtotal.toLocaleString('es-CO')} COP)`);
         });
 
         const total = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
-        msg += `\n*Total Estimado:* $${total.toLocaleString('es-CO')} COP`;
-        msg += "\n\n📍 *Dirección / Unidad Residencial:* ";
+        lines.push("");
+        lines.push(`Total Estimado: $${total.toLocaleString('es-CO')} COP`);
+        lines.push("");
+        lines.push("Dirección / Unidad Residencial: ");
 
-        const encodedMsg = encodeURIComponent(msg);
+        let fullMessage = lines.join("\n");
+        let encodedMsg = encodeURIComponent(fullMessage);
+        
         window.open(`https://wa.me/573146151822?text=${encodedMsg}`, '_blank');
     });
 }
