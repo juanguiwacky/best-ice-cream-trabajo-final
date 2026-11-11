@@ -32,6 +32,7 @@ const cartCountEl = document.getElementById('cartCount');
 const cartTotalEl = document.getElementById('cartTotal');
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
+const navItems = document.querySelectorAll('.nav-links a');
 const sendOrderBtn = document.getElementById('sendOrderBtn');
 
 // Renderizar Menú
@@ -121,10 +122,11 @@ function updateCart() {
     cart.forEach(item => {
         const el = document.createElement('div');
         el.className = 'cart-item';
+        const itemSubtotal = item.price * item.qty;
         el.innerHTML = `
             <div>
                 <div class="cart-item-title">${item.name}</div>
-                <div class="cart-item-price">$${(item.price * item.qty).toLocaleString('es-CO')} COP</div>
+                <div class="cart-item-price">$${itemSubtotal.toLocaleString('es-CO')} COP</div>
             </div>
             <div class="cart-item-qty">
                 <button class="qty-btn" onclick="changeQty(${item.id}, -1)">-</button>
@@ -148,6 +150,7 @@ function closeCart() {
 
 if (openCartBtn) openCartBtn.addEventListener('click', openCart);
 if (closeCartBtn) closeCartBtn.addEventListener('click', closeCart);
+
 if (overlay) {
     overlay.addEventListener('click', () => {
         closeCart();
@@ -155,10 +158,21 @@ if (overlay) {
     });
 }
 
-if (hamburger) {
+// Menú Hamburguesa Móvil
+if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => {
-        if (navLinks) navLinks.classList.toggle('active');
+        navLinks.classList.toggle('active');
         if (overlay) overlay.classList.toggle('active');
+    });
+}
+
+// Cerrar el menú automáticamente al hacer clic en cualquier opción en celular
+if (navLinks) {
+    navItems.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+        });
     });
 }
 
@@ -172,7 +186,8 @@ if (sendOrderBtn) {
 
         let msg = "¡Hola! Quisiera realizar el siguiente pedido a domicilio en Hacienda Niquía:\n\n";
         cart.forEach(item => {
-            msg += `• ${item.qty}x ${item.name} - $${(item.price * item.qty).toLocaleString('es-CO')} COP\n`;
+            const subtotal = item.price * item.qty;
+            msg += `• ${item.qty}x ${item.name} - $${subtotal.toLocaleString('es-CO')} COP\n`;
         });
 
         const total = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
@@ -187,13 +202,3 @@ if (sendOrderBtn) {
 document.addEventListener('DOMContentLoaded', () => {
     renderMenu();
 });
-
-// Selecciona el botón del menú y el contenedor de navegación
-const navToggle = document.querySelector('.nav-toggle'); // Cambia esto por tu clase o ID real del botón
-const navMenu = document.querySelector('nav ul');         // Cambia esto por el selector de tu menú
-
-if (navToggle && navMenu) {
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-    });
-}
