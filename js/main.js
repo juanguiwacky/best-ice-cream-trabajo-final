@@ -187,3 +187,13 @@ if (sendOrderBtn) {
 document.addEventListener('DOMContentLoaded', () => {
     renderMenu();
 });
+
+// Selecciona el botón del menú y el contenedor de navegación
+const navToggle = document.querySelector('.nav-toggle'); // Cambia esto por tu clase o ID real del botón
+const navMenu = document.querySelector('nav ul');         // Cambia esto por el selector de tu menú
+
+if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+}

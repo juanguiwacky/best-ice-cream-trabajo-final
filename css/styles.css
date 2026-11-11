@@ -100,3 +100,17 @@ footer { background-color: #333; color: var(--white-pure); padding: 40px 0 20px 
     .hamburger { display: block; }
     .hero-grid, .about-grid, .delivery-grid { grid-template-columns: 1fr; }
 }
+
+/* Estilo por defecto en móviles (oculto o colapsado) */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Oculta el menú por defecto */
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* Cuando se active con JavaScript, se muestra */
+    nav ul.active {
+        display: flex; 
+    }
+}
